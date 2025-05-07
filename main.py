@@ -7,15 +7,20 @@ class NameToStats:
 
     def __init__(self, root):
 
+        #setting default window attributes
         window_color='lightblue'
         root.title("Mic's Pokedex")
         default_font = font.nametofont("TkDefaultFont")
         default_font.configure(family="Dubai Medium", size=20)
         root.configure(bg=window_color)
 
+        #place label for pokemon sprite on left side of window
         self.sprite=tk.Label(root, bg=window_color)
         self.sprite.pack(side=tk.LEFT)
 
+        #place search bar at top center of window
+        #ensure we can search the user input by
+        #tying it to a StringVar to use in the window
         self.pokename = tk.StringVar()
         poke_entry = tk.Entry(root, textvariable=self.pokename,font=default_font, justify='center')
         poke_entry.pack()
